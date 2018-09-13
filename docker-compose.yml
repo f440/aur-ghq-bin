@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      args:
+        - uid=${uid:-1000}
+    command: bash -x -c 'makepkg -s -f -i --noconfirm && makepkg --printsrcinfo > .SRCINFO && namcap ghq-bin-*.pkg.tar.xz'
+    volumes:
+      - .:/app
