@@ -1,4 +1,4 @@
-FROM base/archlinux:latest
+FROM archlinux:20191006
 
 RUN pacman -Sy --noconfirm --needed base-devel namcap sudo
 
