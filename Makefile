@@ -5,4 +5,8 @@ build:
 .PHONY: clean
 clean:
 	uid=${shell id -u} docker-compose down
-	$(RM) -r src pkg
+	$(RM) -r \
+		ghq-bin-*.pkg.tar.xz \
+		ghq-*_linux_amd64.zip \
+		pkg \
+		src
