@@ -2,6 +2,11 @@
 image-update:
 	docker pull archlinux:latest
 
+.PHONY: version-up
+# e.g. make version-up version=0.00.1
+version-up:
+	./update.sh $(version)
+
 .PHONY: build
 build:
 	uid=${shell id -u} docker-compose up
