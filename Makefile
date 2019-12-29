@@ -18,7 +18,6 @@ build:
 
 .PHONY: commit
 commit:
-	cp .SRCINFO PKGBUILD repo/
 	cd repo && git diff
 	cd repo && git commit -a -m "Bump up version number to $(VERSION)"
 	cd repo && git push --dry-run && echo "ready to push"
@@ -31,8 +30,3 @@ push:
 .PHONY: clean
 clean:
 	uid=${shell id -u} docker-compose down
-	$(RM) -r \
-		ghq-bin-*.pkg.tar.xz \
-		ghq-*_linux_amd64.zip \
-		pkg \
-		src
