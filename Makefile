@@ -1,3 +1,7 @@
+.PHONY: image-update
+image-update:
+	docker pull archlinux:latest
+
 .PHONY: build
 build:
 	uid=${shell id -u} docker-compose up
