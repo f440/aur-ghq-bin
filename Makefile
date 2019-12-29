@@ -1,5 +1,8 @@
 VERSION := $(shell cat VERSION)
 
+.PHONY: all
+all: clone image-update version-up build commit
+
 .PHONY: clone
 clone:
 	if [ ! -d repo ]; then git clone ssh://aur@aur.archlinux.org/ghq-bin.git repo ; else cd repo && git pull; fi
