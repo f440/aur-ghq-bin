@@ -5,7 +5,7 @@ services:
       context: .
       args:
         - uid=${uid:-1000}
-    command: bash -x -c 'makepkg -s -f -i --noconfirm && makepkg --printsrcinfo > .SRCINFO && namcap ghq-bin-*.pkg.tar.xz && cp .SRCINFO PKGBUILD repo/'
+    command: bash -x -c 'makepkg -s -f -i --noconfirm && makepkg --printsrcinfo > .SRCINFO && namcap ghq-bin-*.pkg.tar.zst && cp .SRCINFO PKGBUILD repo/'
     volumes:
       - ./PKGBUILD:/app/PKGBUILD
       - ./repo:/app/repo
